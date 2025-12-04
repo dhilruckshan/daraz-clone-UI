@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="D-styles.css" />
+</head>
+<body>
+  <div id="L-container">
+    <form id="L-form">
+      <h2 id="L-title">Login</h2>
+
+      <label for="L-email" class="L-label">Email or Phone</label>
+      <input type="text" id="L-email" class="L-input" name="email" placeholder="Enter your email or phone" required />
+
+      <label for="L-password" class="L-label">Password</label>
+      <input type="password" id="L-password" class="L-input" name="password" placeholder="Enter your password" required />
+
+      <div id="L-forgot">
+        <a href="#" class="L-link">Forgot password?</a>
+      </div>
+
+      <button type="submit" id="L-login-btn">Login</button>
+
+      <div id="L-signup">
+        Don't have an account? <a href="#" class="L-link">Sign up</a>
+      </div>
+
+      <div id="L-social">
+        <p class="L-social-text">Or login with</p>
+        <button class="L-social-btn L-google">Google</button>
+        <button class="L-social-btn L-facebook">Facebook</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

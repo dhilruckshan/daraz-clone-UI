@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Sign Up</title>
+  <link rel="stylesheet" href="D-styles.css" />
+</head>
+<body>
+  <div id="M-container">
+    <form id="M-form">
+      <h2 id="M-title">Sign Up with Mobile</h2>
+
+      <div id="M-phone-group">
+        <label for="M-country-code" class="M-label">Country Code</label>
+        <select id="M-country-code" name="country-code" class="M-select">
+          <option value="+94">LK +94</option>
+          <option value="+91">IN +91</option>
+          <option value="+1">US +1</option>
+        </select>
+
+        <label for="M-phone" class="M-label">Phone Number</label>
+        <input type="tel" id="M-phone" name="phone" class="M-input" placeholder="Enter your phone number" required />
+      </div>
+
+      <div id="M-terms">
+        <input type="checkbox" id="M-agree" name="agree" required />
+        <label for="M-agree" class="M-checkbox-label">
+          I agree to the <a href="#" class="M-link">Terms of Use</a> and <a href="#" class="M-link">Privacy Policy</a>
+        </label>
+      </div>
+
+      <button type="submit" id="M-submit-btn">Send code via SMS</button>
+
+      <div id="M-login-link">
+        Already have an account? <a href="#" class="M-link">Log in</a>
+      </div>
+
+      <div id="M-social-signup">
+        <p class="M-social-text">Or sign up with</p>
+        <button class="M-social-btn M-google">Google</button>
+        <button class="M-social-btn M-facebook">Facebook</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

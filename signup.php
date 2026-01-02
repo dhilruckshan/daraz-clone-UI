@@ -2,7 +2,7 @@
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	
 	//connect to mysql database
-	$conn == new mysqli("localhost", "root", "", "test");
+	$conn == new mysqli("localhost", "root", "", "signup_db");
 	// the "conn" is a variable(anything can be used) , "test is a database name"
 
 	//check connection
@@ -10,17 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		die("Connection Failled:" . $conn->connect_error);
 	}
 
-	//collect from data directly
-	$full_name = $_POST['full_name'];
-	$email = $_POST['email_address'];
-	$telephone = $_POST['phone_number'];
-	$password = $_POST['password'];
-	$nic = $_POST['nic'];
-	$address = $_POST['address'];
+	//collect from data directl
+	$email = $_POST['email'];
 	//"$post[name is html]"
 
 	//check if email already exists
-	$check_email = "SELECT * FROM students WHERE email='$email'";
+	$check_email = "SELECT * FROM signup_TB WHERE email='$email'";
 	$result = $conn->query($check_email);
 
 	if ($result->num_rows > 0) {
@@ -32,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 	//insert data (no escaping)
-	$insert query = "INSERT INTO students (full_name, email, telephone, password, nic, address)
-	VALUES ('$full_name', '$email', '$telephone', '$hashed_password', '$nic', '$address')";
+	$insert_query = "INSERT INTO signup_TB (email)
+	VALUES ('$email')";
 
 	if ($conn->query($insert_query) === TRUE) {
 		echo "Registration Successful ! You can now <a href='login.html'>Login<a>.";

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$password = $_POST['password'];
 
 	//Create connection
-	$conn = new mysqli("localhost", "root", "", "test");
+	$conn = new mysqli("localhost", "root", "", "login_DB");
 
 	//Check connection
 	if ($conn->connect_error) {
@@ -18,19 +18,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 
 	//prevent sql injection
-	$username = $conn->real_escape_string($username);
+	$email = $conn->real_escape_string($email);
 	$password = $conn->real_escape_string($password);
 
 	//query the database
-	$sql = "SELECT * FROM students WHERE email='$username' AND password='$password'";
+	$sql = "SELECT * FROM students WHERE email='$email' AND password='$password'";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows == 1) {
 		//login success
-		$_SESSION['username'] = $username;
+		$_SESSION['email'] = $email;
 		echo "Login Successful. Welcome, ";
 		//redirect to dashboard or homepage
-		//header("L+ocarion: dashboard.php");
+		//header("LLocation: dashboard.php");
 		//exit();
 	}
 	else {
